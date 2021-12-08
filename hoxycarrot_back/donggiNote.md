@@ -35,4 +35,13 @@
   app.use('/movies', express.static(__dirname + '/public/images/movies'));
   ```
   요청시 `~/movies/[파일명]` 으로 간결하게 호출할수있도록 `static`을 나눠줄예정<br>
+
+----------------
+ ## **ERROR**
   
+  ### E1. 
+   ```
+   npm ERR! code ELIFECYCLE 
+   npm ERR! errno 1
+   ```
+   A1. `npm cache clean --force` -> `package-lock.json`과 `node_modules`를 제거하고 `npm install` ㄹㄹ ㄱㄱ
