@@ -7,8 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
+// swagger
+const { swaggerUi , specs } = require('./config/swagger');
 
 var app = express();
+
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(specs,{explorer:false}))
 
 // 이부분은 react
 // view engine setup        
@@ -25,7 +29,38 @@ app.use('/videos', express.static(__dirname + '/public/videos'));
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/',indexRouter)
+app.use('/api-kobis',indexRouter)
+
+app.get('/',(req,res,next)=>{
+  const title = 'TEST HTML';
+
+  var html = `
+  <!doctype html>
+  <html>
+      <head>
+          <title>WEB1 - ${title}</title>
+          <meta charset="utf-8">
+      </head>
+      <body>
+          <h1><a href="/">WEB</a></h1>
+          <p>
+            <div>
+              <form action="/api/kobis/latte_process" method="post">
+              <div>
+                <input type="text" name='genres' placeholder ='장르'>
+                <input type="text" name='type' placeholder ='유형'>
+                <input type="text" name='directors' placeholder ='감독 명'>
+              </div>
+              <input type="submit" value="Enter">
+              </form>
+            </div>
+          </p>
+      </body>
+  </html>
+  `;
+  res.send(html);
+})
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,6 +75,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
+  // res.send('error')
   res.render('error');
 });
 
