@@ -1,18 +1,19 @@
 {
-  "name": "tori",
+  "name": "naver_crawl",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "naver_crawl": "babel-node naver.js"
+    "naver_crawl": "babel-node naver.js",
+    "naver_serach": "babel-node naver_search.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HoxyCarrot/Tori.git"
   },
-  "author": "hoxycarrot",
+  "author": "Changhee An",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HoxyCarrot/Tori/issues"
@@ -25,7 +26,8 @@
     "mysql": "^2.18.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
-    "sync-mysql": "^3.0.1"
+    "sync-mysql": "^3.0.1",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",

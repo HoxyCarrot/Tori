@@ -2,7 +2,6 @@ import cheerio from 'cheerio';
 import request from 'request-promise';
 import mysql from 'sync-mysql';
 
-
 import db from './db';
 
 const db_conn = new mysql({
@@ -36,6 +35,21 @@ function crawl() {
             'country': 'FR',
             'year': '1973',
         },
+        {
+            'query': '문라이즈 킹덤',
+            'country': 'US',
+            'year': '2012',
+        },
+        {
+            'query': '월-E',
+            'country': 'US',
+            'year': '2008',
+        },
+        {
+            'query': '다크 나이트',
+            'country': 'US',
+            'year': '2008',
+        },
     ];
 
     neverFailMovies.forEach((element, index) => {
@@ -53,19 +67,18 @@ function crawl() {
             };
             request(options, function(error, response, body){
                 const obj = JSON.parse(body);
-                const title = obj.items[0].title;
+                const title = obj.items[0].title.trim().replace(/(<b>|<\/b>)/g,'');
                 const link = obj.items[0].link;
                 const image = obj.items[0].image;
-                const subtitle = obj.items[0].subtitle;
+                const subtitle = obj.items[0].subtitle.trim().replace(/(<b>|<\/b>)/g,'');
                 const pubDate = obj.items[0].pubDate;
                 const director = obj.items[0].director;
                 const actor = obj.items[0].actor;
                 const params = [title, link, image, subtitle, pubDate, director, actor];
-                db_conn.query("INSERT INTO test_naver(title, link, image, subtitle, pubDate, director, actor)  VALUES(?, ?, ?, ?, ?, ?, ?)",params, function(err) {
+                db_conn.query("INSERT INTO Tori_naver_movie_list(title, link, image, subtitle, pubDate, director, actor)  VALUES(?, ?, ?, ?, ?, ?, ?)",params, function(err) {
                     if(err) console.log('query is not excuted. insert fail...\n' + err);
                     else res.redirect('/list');
                 });
-                // console.log(body);
             })
         }
     });
