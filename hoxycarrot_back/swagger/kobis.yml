@@ -1,0 +1,115 @@
+components:
+  schemas:
+    Movies:
+      type : object
+      properties:
+        movieCd:
+          type: string
+          description: 영화 고유 ID
+        movieNm:
+          type: string
+          description: 영화 제목 한글
+        movieNmEn:
+          type: string
+          description: 영화 제목 영어
+        movieNmOg:
+          type: string
+          description: 영화 제목 원어
+        showTm:
+          type: string
+          description: 상영시간 (Min)
+        type:
+          type: string
+          description: 영화 유형
+        openDt:
+          type: string
+          description: 개봉 년도 (YYYYMMDD)
+        nations:
+          type: string
+          description: 제작 국가 (구분자:|)
+        genres:
+          type: string
+          description: 장르 (구분자:|)
+        directors:
+          type: string
+          description: 감독명 (구분자:|)
+    Persons:
+      type : object
+      properties:
+        peopleCd:
+          type: string
+          description: 영화인 고유 ID
+        peopleNm:
+          type: string
+          description: 영화인 명
+        peopleNmEn:
+          type: string
+          description: 영화인 명 (영어)
+        repRoleNm:
+          type: string
+          description: 영화인 분류
+        gender:
+          type: string
+          description: 성별
+        role_filmoCount:
+          type: string
+          description: 감독으로 참여한 필모수
+        filmoCount:
+          type: string
+          description: 필모수
+    Movie_join_Person:
+      type : object
+      properties:
+        movieCd:
+          type: string
+          description: 영화 고유 ID
+        movieNm:
+          type: string
+          description: 영화 제목 한글
+        movieNmEn:
+          type: string
+          description: 영화 제목 영어
+        movieNmOg:
+          type: string
+          description: 영화 제목 원어
+        showTm:
+          type: string
+          description: 상영시간 (Min)
+        type:
+          type: string
+          description: 영화 유형
+        openDt:
+          type: string
+          description: 개봉 년도 (YYYYMMDD)
+        nations:
+          type: string
+          description: 제작 국가 (구분자:|)
+        genres:
+          type: string
+          description: 장르 (구분자:|)
+        directors:
+          type: string
+          description: 감독명 (구분자:|)
+        peopleCd:
+          type: string
+          description: 영화인 고유 ID
+        peopleNm:
+          type: string
+          description: 영화인 명
+        peopleNmEn:
+          type: string
+          description: 영화인 명 (영어)
+        repRoleNm:
+          type: string
+          description: 영화인 분류
+        gender:
+          type: string
+          description: 성별
+        role_filmoCount:
+          type: string
+          description: 감독으로 참여한 필모수
+        filmoCount:
+          type: string
+          description: 필모수
+
+        
