@@ -1,13 +1,11 @@
 {
-  "name": "naver_crawl",
+  "name": "leaping_crawler",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "yts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "naver_crawl": "babel-node naver.js",
-    "naver_serach": "babel-node naver_search.js"
+    "yts": "babel-node yts.js",
+    "naver_movie": "babel-node naver_movie.js"
   },
   "repository": {
     "type": "git",

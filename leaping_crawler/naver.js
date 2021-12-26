@@ -15,38 +15,38 @@ const db_conn = new mysql({
 function crawl() {
     const neverFailMovies = [
         {
-            'query': '인터스텔라',
+            'query': '?��?��?��?��?��',
             'genre': '18',
             'country': 'US',
             'year': '2014',
         },
         {
-            'query': '인셉션',
+            'query': '?��?��?��',
             'country': 'US',
             'year': '2010',
         },
         {
-            'query': '인타임',
+            'query': '?��????��',
             'country': 'US',
             'year': '2011',
         },
         {
-            'query': '빠삐용',
+            'query': '빠삐?��',
             'country': 'FR',
             'year': '1973',
         },
         {
-            'query': '문라이즈 킹덤',
+            'query': '문라?���? ?��?��',
             'country': 'US',
             'year': '2012',
         },
         {
-            'query': '월-E',
+            'query': '?��-E',
             'country': 'US',
             'year': '2008',
         },
         {
-            'query': '다크 나이트',
+            'query': '?��?�� ?��?��?��',
             'country': 'US',
             'year': '2008',
         },
